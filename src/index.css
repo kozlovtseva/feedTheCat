@@ -1,13 +1,14 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-family: "Exo 2.0 Thin";
+    src: local("Exo 2.0 Thin"), url(./fonts/Exo2.0-Thin.otf) format("opentype");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+    box-sizing: border-box;
+    font-family: "Source Sans Pro", sans-serif;
+    /* font-family: "Exo 2.0 Thin", arial; */
+    text-decoration: none;
+    margin: 0;
+    outline: none;
+    padding: 0;
 }
