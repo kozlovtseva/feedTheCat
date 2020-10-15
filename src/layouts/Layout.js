@@ -19,6 +19,7 @@ const Container = styled.div`
         rgba(0, 0, 0, 0) 50%,
         rgba(0, 0, 0, 0.5) 100%
     );
+    height: 100vh;
 `;
 
 export default Layout;
