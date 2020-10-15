@@ -4,10 +4,16 @@ import styled from "styled-components";
 
 const ListItemFooter = (props) => {
     const footer_content = props.available ? (
-        <FooterContent>
-            <span>Чего сидишь? Порадуй котэ, </span>
-            <Link href="#">купи.</Link>
-        </FooterContent>
+        props.isSelected ? (
+            <FooterContent>
+                <span>{props.description}</span>
+            </FooterContent>
+        ) : (
+            <FooterContent>
+                <span>Чего сидишь? Порадуй котэ, </span>
+                <Link href="#">купи.</Link>
+            </FooterContent>
+        )
     ) : (
         <FooterContent>
             <UnavailableText>

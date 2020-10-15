@@ -8,13 +8,20 @@ import ListItemWeight from "./ListItemWeight";
 import ListItemFooter from "./ListItemFooter";
 
 const ListItem = (props) => {
+    const [isSelected, setSelected] = useState(false);
     return (
-        <Wrapper>
+        <Wrapper
+            isSelected={isSelected}
+            onClick={() => {
+                if (props.item.available) setSelected(!isSelected);
+            }}
+        >
             <ListItemHeader
                 type={props.item.type}
                 available={props.item.available}
+                isSelected={isSelected}
             />
-            <Container available={props.item.available}>
+            <Container available={props.item.available} isSelected={isSelected}>
                 <Name>{props.item.name}</Name>
                 <Taste>{props.item.taste}</Taste>
                 <ListItemPromo
@@ -30,12 +37,15 @@ const ListItem = (props) => {
                     <ListItemWeight
                         weight={props.item.weight}
                         available={props.item.available}
+                        isSelected={isSelected}
                     />
                 </ImageContainer>
             </Container>
             <ListItemFooter
                 taste={props.item.taste}
                 available={props.item.available}
+                isSelected={isSelected}
+                description={props.item.description}
             />
         </Wrapper>
     );
@@ -47,11 +57,23 @@ const Wrapper = styled.li`
     margin-bottom: 40px;
     &:hover {
         cursor: pointer;
+        .food_type {
+            display: ${(props) => (props.isSelected ? "none" : "block")};
+        }
+        .food_type_question {
+            display: ${(props) => (props.isSelected ? "block" : "none")};
+        }
     }
 `;
 const Container = styled.div`
     background-color: ${(props) => (props.available ? "#fff" : "#F2F2F2")};
-    border: 4px solid ${(props) => (props.available ? "#1698d9" : "#B3B3B3")};
+    border: 4px solid
+        ${(props) =>
+            props.available
+                ? props.isSelected
+                    ? "#E52E7A"
+                    : "#1698d9"
+                : "#B3B3B3"};
     border-top: none;
     border-radius: 0 0 12px 12px;
     padding-left: 45px;
