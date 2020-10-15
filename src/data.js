@@ -16,7 +16,7 @@ export const catsFoodList = [
         ],
         weight: 0.5,
         description: "Печень утки разварная с артишоками.",
-        image: "cat.jpg",
+        image: "cat.png",
         available: true,
     },
     {
@@ -36,7 +36,7 @@ export const catsFoodList = [
         ],
         weight: 2,
         description: "Головы щучьи с чесноком да свежайшая сёмгушка.",
-        image: "cat.jpg",
+        image: "cat.png",
         available: true,
     },
     {
@@ -56,7 +56,7 @@ export const catsFoodList = [
         ],
         weight: 5,
         description: "Филе из цыплят с трюфелями в бульоне.",
-        image: "cat.jpg",
+        image: "cat.png",
         available: false,
     },
 ];

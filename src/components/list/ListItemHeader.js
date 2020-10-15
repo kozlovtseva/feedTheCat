@@ -5,21 +5,24 @@ import styled from "styled-components";
 const ListItemHeader = (props) => {
     return (
         <Header>
-            <Corner />
-            <Type>{props.type}</Type>
+            <Corner available={props.available} />
+            <Type available={props.available}>{props.type}</Type>
         </Header>
     );
 };
 
 const Header = styled.div`
     display: flex;
+    position: relative;
 `;
 const Type = styled.div`
-    background-color: #fff;
-    border-top: 4px solid #1698d9;
-    border-right: 4px solid #1698d9;
+    background-color: ${(props) => (props.available ? "#fff" : "#F2F2F2")};
+    border-top: 4px solid
+        ${(props) => (props.available ? "#1698d9" : "#B3B3B3")};
+    border-right: 4px solid
+        ${(props) => (props.available ? "#1698d9" : "#B3B3B3")};
     border-radius: 0 12px 0 0;
-    color: #666;
+    color: ${(props) => (props.available ? "#666" : "#B3B3B3")};
     font-size: 16px;
     height: 45px;
     line-height: 45px;
@@ -31,12 +34,13 @@ const Corner = styled.div`
         135deg,
         transparent,
         transparent 45%,
-        #1698d9 48%,
-        #1698d9 55%,
-        #fff 55%,
-        #fff 100%
+        ${(props) => (props.available ? "#1698d9" : "#B3B3B3")} 48%,
+        ${(props) => (props.available ? "#1698d9" : "#B3B3B3")} 55%,
+        ${(props) => (props.available ? "#fff" : "#F2F2F2")} 55%,
+        ${(props) => (props.available ? "#fff" : "#F2F2F2")} 100%
     );
     height: 45px;
     width: 45px;
 `;
+
 export default ListItemHeader;

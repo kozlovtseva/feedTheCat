@@ -7,37 +7,59 @@ import ListItemPromo from "./ListItemPromo";
 import ListItemWeight from "./ListItemWeight";
 
 const ListItem = (props) => {
+    const footer_content = props.item.available ? (
+        <FooterContent>
+            <span>Чего сидишь? Порадуй котэ, </span>
+            <Link href="#">купи.</Link>
+        </FooterContent>
+    ) : (
+        <FooterContent>
+            <UnavailableText>
+                Печалька, {props.item.taste} закончился.
+            </UnavailableText>
+        </FooterContent>
+    );
     return (
         <Wrapper>
-            <ListItemHeader type={props.item.type} />
-            <Container>
+            <ListItemHeader
+                type={props.item.type}
+                available={props.item.available}
+            />
+            <Container available={props.item.available}>
                 <Name>{props.item.name}</Name>
                 <Taste>{props.item.taste}</Taste>
-                <ListItemPromo promo={props.item.promo} />
+                <ListItemPromo
+                    promo={props.item.promo}
+                    available={props.item.available}
+                />
                 <ImageContainer>
                     <Image
                         src={require(`../../images/${props.item.image}`)}
                         alt={props.item.name}
+                        available={props.item.available}
                     />
-                    <ListItemWeight weight={props.item.weight} />
+                    <ListItemWeight
+                        weight={props.item.weight}
+                        available={props.item.available}
+                    />
                 </ImageContainer>
             </Container>
-            <Footer>
-                <FooterContent>
-                    Чего сидишь? Порадуй котэ, <Link href="#">купи.</Link>
-                </FooterContent>
-            </Footer>
+            <Footer>{footer_content}</Footer>
         </Wrapper>
     );
 };
 const Wrapper = styled.li`
+    color: ${(props) => (props.available ? "#000" : "#B3B3B3")};
     flex: 0 1 350px;
     list-style: none;
     margin-bottom: 40px;
+    &:hover {
+        cursor: pointer;
+    }
 `;
 const Container = styled.div`
-    background-color: #fff;
-    border: 4px solid #1698d9;
+    background-color: ${(props) => (props.available ? "#fff" : "#F2F2F2")};
+    border: 4px solid ${(props) => (props.available ? "#1698d9" : "#B3B3B3")};
     border-top: none;
     border-radius: 0 0 12px 12px;
     padding-left: 45px;
@@ -55,6 +77,7 @@ const Image = styled.img`
     border-radius: 0 0 0 8px;
     bottom: 0;
     left: -45px;
+    opacity: ${(props) => (props.available ? "1" : "0.5")};
     position: absolute;
 `;
 const ImageContainer = styled.div`
@@ -78,6 +101,9 @@ const Link = styled.a`
     color: #2ea8e6;
     font-size: 13px;
     font-weight: 700;
+`;
+const UnavailableText = styled.span`
+    color: #ffff66;
 `;
 
 export default ListItem;

@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const ListItemWeight = (props) => {
     return (
-        <Container>
+        <Container available={props.available}>
             <Weight>{props.weight.toString().replace(".", ",")}</Weight>
             <Measure>кг</Measure>
         </Container>
@@ -12,7 +12,7 @@ const ListItemWeight = (props) => {
 };
 
 const Container = styled.div`
-    background-color: #2ea8e6;
+    background-color: ${(props) => (props.available ? "#2ea8e6" : "#B3B3B3")};
     border-radius: 50%;
     bottom: 16px;
     color: #fff;

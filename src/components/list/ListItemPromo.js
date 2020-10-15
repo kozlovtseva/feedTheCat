@@ -19,11 +19,11 @@ const ListItemPromo = (props) => {
         </PromoItem>
     ));
 
-    return <Text>{promoItems}</Text>;
+    return <Text available={props.available}>{promoItems}</Text>;
 };
 
 const Text = styled.p`
-    color: #666;
+    color: ${(props) => (props.available ? "#666" : "#B3B3B3")};
     font-size: 14px;
     margin-top: 15px;
 `;
