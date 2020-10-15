@@ -55,13 +55,15 @@ const Wrapper = styled.li`
     flex: 0 1 350px;
     list-style: none;
     margin-bottom: 40px;
-    &:hover {
-        cursor: pointer;
-        .food_type {
-            display: ${(props) => (props.isSelected ? "none" : "block")};
-        }
-        .food_type_question {
-            display: ${(props) => (props.isSelected ? "block" : "none")};
+    @media (hover: hover) {
+        &:hover {
+            cursor: pointer;
+            .food_type {
+                display: ${(props) => (props.isSelected ? "none" : "block")};
+            }
+            .food_type_question {
+                display: ${(props) => (props.isSelected ? "block" : "none")};
+            }
         }
     }
 `;
