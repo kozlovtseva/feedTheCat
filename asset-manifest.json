@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/feedTheCat/static/css/main.f1aa9646.chunk.css",
+    "main.js": "/feedTheCat/static/js/main.b5a4314f.chunk.js",
+    "main.js.map": "/feedTheCat/static/js/main.b5a4314f.chunk.js.map",
+    "runtime-main.js": "/feedTheCat/static/js/runtime-main.5e6c3bdc.js",
+    "runtime-main.js.map": "/feedTheCat/static/js/runtime-main.5e6c3bdc.js.map",
+    "static/js/2.4358fe5f.chunk.js": "/feedTheCat/static/js/2.4358fe5f.chunk.js",
+    "static/js/2.4358fe5f.chunk.js.map": "/feedTheCat/static/js/2.4358fe5f.chunk.js.map",
+    "index.html": "/feedTheCat/index.html",
+    "precache-manifest.5832d4168417f9df32ae006e19081fde.js": "/feedTheCat/precache-manifest.5832d4168417f9df32ae006e19081fde.js",
+    "service-worker.js": "/feedTheCat/service-worker.js",
+    "static/css/main.f1aa9646.chunk.css.map": "/feedTheCat/static/css/main.f1aa9646.chunk.css.map",
+    "static/js/2.4358fe5f.chunk.js.LICENSE.txt": "/feedTheCat/static/js/2.4358fe5f.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/feedTheCat/static/media/Exo2.0-Thin.44bde874.otf",
+    "static/media/cat.png": "/feedTheCat/static/media/cat.f1bfed4b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5e6c3bdc.js",
+    "static/js/2.4358fe5f.chunk.js",
+    "static/css/main.f1aa9646.chunk.css",
+    "static/js/main.b5a4314f.chunk.js"
+  ]
+}
